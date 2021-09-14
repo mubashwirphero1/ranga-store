@@ -52,7 +52,7 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = total;
+  document.getElementById(id).innerText = total.toFixed(2);
 };
 
 // Set innerText function
@@ -80,7 +80,7 @@ const updateTaxAndCharge = () => {
 // GrandTotal update function
 const updateTotal = () => {
   const grandTotal = getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 
 // Calling load products function
@@ -88,3 +88,8 @@ loadProducts();
 
 // Calling update total function
 updateTotal();
+
+// Changing location for product details
+const changeLocation = () => {
+  window.location.href = 'assets/product-details.html'
+}
